@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4301628651593828}
   m_Layer: 0
-  m_Name: Music tape walkman
+  m_Name: Walkman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
