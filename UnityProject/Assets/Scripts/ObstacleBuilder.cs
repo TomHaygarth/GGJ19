@@ -7,7 +7,7 @@ public class ObstacleBuilder : MonoBehaviour {
     [SerializeField]
     private GameObject[] _obstacles;
 
-    GameObject obCreate(RhythmSegment rhythm) { // Creates obstacles on track
+    public GameObject obCreate(RhythmSegment rhythm) { // Creates obstacles on track
         GameObject segment = new GameObject();
 
         for (int i = 0; i < rhythm.BeatObstacles.Length; i++) {

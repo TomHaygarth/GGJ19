@@ -14,7 +14,7 @@ public class RhythmSegment : ScriptableObject {
 	};
 
 	[SerializeField]
-	private AudioClip m_track;
+	private AudioClip[] m_tracks;
 
 	[SerializeField]
 	private int m_BPM = 125;
@@ -23,6 +23,6 @@ public class RhythmSegment : ScriptableObject {
 	private ObstacleType[] m_beatObstacles;
 
 	public int BPM { get { return m_BPM; } }
-	public AudioClip Track { get { return m_track; } }
+	public AudioClip[] Tracks { get { return m_tracks; } }
 	public ObstacleType[] BeatObstacles { get { return m_beatObstacles; } }
 }
