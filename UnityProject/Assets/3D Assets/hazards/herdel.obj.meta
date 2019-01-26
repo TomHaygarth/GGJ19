@@ -1,22 +1,17 @@
 fileFormatVersion: 2
-guid: a961042f43c83f94295527f4f80fdaa7
+guid: e1d54a0139ab90b44a0c46db5b6b2012
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Flat_building_Red
+    100000: herdel
     100002: //RootNode
-    400000: Flat_building_Red
+    400000: herdel
     400002: //RootNode
     2100000: palette
-    2300000: Flat_building_Red
-    3300000: Flat_building_Red
-    4300000: Flat_building_Red
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: palette
-    second: {fileID: 2100000, guid: 1c3f137b9cc94374c9fc29332b53a0ac, type: 2}
+    2300000: herdel
+    3300000: herdel
+    4300000: herdel
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -47,7 +42,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1

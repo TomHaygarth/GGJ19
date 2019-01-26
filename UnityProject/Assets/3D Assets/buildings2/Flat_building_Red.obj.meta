@@ -1,17 +1,22 @@
 fileFormatVersion: 2
-guid: 75034007df873dc429da63deecea1cb0
+guid: a961042f43c83f94295527f4f80fdaa7
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Flowers_and_Tree_Park_Chunk
-    400000: //RootNode
-    400002: Flowers_and_Tree_Park_Chunk
-    2100000: Flowers_and_Tree_Park_ChunkMat
-    2300000: Flowers_and_Tree_Park_Chunk
-    3300000: Flowers_and_Tree_Park_Chunk
-    4300000: Flowers_and_Tree_Park_Chunk
-  externalObjects: {}
+    100000: Flat_building_Red
+    100002: //RootNode
+    400000: Flat_building_Red
+    400002: //RootNode
+    2100000: palette
+    2300000: Flat_building_Red
+    3300000: Flat_building_Red
+    4300000: Flat_building_Red
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: palette
+    second: {fileID: 2100000, guid: 1c3f137b9cc94374c9fc29332b53a0ac, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -42,7 +47,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1

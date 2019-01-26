@@ -1,22 +1,17 @@
 fileFormatVersion: 2
-guid: e2e4e034cbcb5144a85b139b59463391
+guid: 75034007df873dc429da63deecea1cb0
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: GGJ2019_Hotel
-    100002: //RootNode
-    400000: GGJ2019_Hotel
-    400002: //RootNode
-    2100000: palette
-    2300000: GGJ2019_Hotel
-    3300000: GGJ2019_Hotel
-    4300000: GGJ2019_Hotel
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: palette
-    second: {fileID: 2100000, guid: 48e812ded07586c40af4ef805e5ed7ab, type: 2}
+    100000: //RootNode
+    100002: Flowers_and_Tree_Park_Chunk
+    400000: //RootNode
+    400002: Flowers_and_Tree_Park_Chunk
+    2100000: Flowers_and_Tree_Park_ChunkMat
+    2300000: Flowers_and_Tree_Park_Chunk
+    3300000: Flowers_and_Tree_Park_Chunk
+    4300000: Flowers_and_Tree_Park_Chunk
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -47,7 +42,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
