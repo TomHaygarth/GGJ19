@@ -1,17 +1,22 @@
 fileFormatVersion: 2
-guid: c933a3a9b7b75d649a2418da87b8e733
+guid: fa0df546e4faa6a48aa4bc20f1e7a771
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: pathway
+    100000: Light
     100002: //RootNode
-    400000: pathway
+    400000: Light
     400002: //RootNode
     2100000: palette
-    2300000: pathway
-    3300000: pathway
-    4300000: pathway
-  externalObjects: {}
+    2300000: Light
+    3300000: Light
+    4300000: Light
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: palette
+    second: {fileID: 2100000, guid: ba1761c334bcab4438c0903d3b69243c, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

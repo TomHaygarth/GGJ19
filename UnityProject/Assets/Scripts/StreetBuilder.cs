@@ -7,6 +7,7 @@ public class StreetBuilder : MonoBehaviour
 
     [SerializeField]
     private GameObject[] _buildings;
+    public GameObject[] _path;
 
     GameObject streetLine(RhythmSegment rhythm)
     { // Creates buildings next to track
@@ -21,15 +22,19 @@ public class StreetBuilder : MonoBehaviour
             int idx = Random.Range(0, _buildings.Length);
             GameObject rBuild = GameObject.Instantiate(_buildings[idx]);
             rBuild.transform.SetParent(streetSection.transform, false);
-            rBuild.transform.localPosition = new Vector3(30, 0, 10 * i); ;
+            rBuild.transform.localPosition = new Vector3(4, 0, 1 * i); ;
             rBuild.transform.Rotate(Vector3.up,-90);
 
             idx = Random.Range(0, _buildings.Length);
             GameObject lBuild = GameObject.Instantiate(_buildings[idx]);
             lBuild.transform.SetParent(streetSection.transform, false);
-            lBuild.transform.localPosition = new Vector3(-30, 0, 10 * i); ;
+            lBuild.transform.localPosition = new Vector3(-4, 0, 1 * i); ;
             lBuild.transform.Rotate(Vector3.up, 90);
         }
+        GameObject road = GameObject.Instantiate(_path[0]);
+        road.transform.SetParent(streetSection.transform, false);
+        road.transform.localPosition = new Vector3(0, 0, 1);
+        road.transform.localScale = new Vector3(1.6f, 0.4f, 1.5f);
         return streetSection;
     }
 

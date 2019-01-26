@@ -1,17 +1,22 @@
 fileFormatVersion: 2
-guid: c933a3a9b7b75d649a2418da87b8e733
+guid: e2e4e034cbcb5144a85b139b59463391
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: pathway
+    100000: GGJ2019_Hotel
     100002: //RootNode
-    400000: pathway
+    400000: GGJ2019_Hotel
     400002: //RootNode
     2100000: palette
-    2300000: pathway
-    3300000: pathway
-    4300000: pathway
-  externalObjects: {}
+    2300000: GGJ2019_Hotel
+    3300000: GGJ2019_Hotel
+    4300000: GGJ2019_Hotel
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: palette
+    second: {fileID: 2100000, guid: 48e812ded07586c40af4ef805e5ed7ab, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

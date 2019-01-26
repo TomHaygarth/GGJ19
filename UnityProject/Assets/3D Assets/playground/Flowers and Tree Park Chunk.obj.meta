@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: c933a3a9b7b75d649a2418da87b8e733
+guid: 75034007df873dc429da63deecea1cb0
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: pathway
-    100002: //RootNode
-    400000: pathway
-    400002: //RootNode
-    2100000: palette
-    2300000: pathway
-    3300000: pathway
-    4300000: pathway
+    100000: //RootNode
+    100002: Flowers_and_Tree_Park_Chunk
+    400000: //RootNode
+    400002: Flowers_and_Tree_Park_Chunk
+    2100000: Flowers_and_Tree_Park_ChunkMat
+    2300000: Flowers_and_Tree_Park_Chunk
+    3300000: Flowers_and_Tree_Park_Chunk
+    4300000: Flowers_and_Tree_Park_Chunk
   externalObjects: {}
   materials:
     importMaterials: 1
