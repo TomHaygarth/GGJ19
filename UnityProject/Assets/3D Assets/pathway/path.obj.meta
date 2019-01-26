@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 57c92614125b58c4fb60ed1a1d6f9034
+guid: 1358bf328d0896348b8f8494915123f5
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: 180Jump3
+    100000: path
     100002: //RootNode
-    400000: 180Jump3
+    400000: path
     400002: //RootNode
     2100000: palette
-    2300000: 180Jump3
-    3300000: 180Jump3
-    4300000: 180Jump3
+    2300000: path
+    3300000: path
+    4300000: path
   externalObjects: {}
   materials:
     importMaterials: 1

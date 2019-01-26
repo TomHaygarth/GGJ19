@@ -23,8 +23,17 @@ public class LevelController : MonoBehaviour {
 	private List<RhythmSegment> m_currentSegments = new List<RhythmSegment>();
 	int m_currentSegmentBeat = 0;
 
+	private float m_timeSinceLastBeat = 0.0f;
+	private bool m_currentBeatSuccess = false;
+	private float m_beatsPerSecond = 0.0f;
+	private float m_beatMinReactionTime = 0.0f;
+	private float m_moveUnitsPerSecond = 0.0f;
+
+	private const float m_beatTimeReactionPercantage = 0.5f;
+
+
 	[SerializeField]
-	bool m_generateFullTrack = false;
+	bool m_generateFullTrack = false; // A bit of a hack flag to avoid pooling and building on the fly but will probably make the game run like ass
 
 	// Use this for initialization
 	void Start () {
@@ -45,10 +54,12 @@ public class LevelController : MonoBehaviour {
 				ConstructTrackSegment(m_baseSegments[i]);
 			}
 		}
+		SetNextSegmentInfo();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		m_movingRoot.localPosition += (m_movingRootDirection * (m_moveUnitsPerSecond * Time.deltaTime));
 	}
 
 	private void ConstructTrackSegment(RhythmSegment segment)
@@ -68,5 +79,18 @@ public class LevelController : MonoBehaviour {
 		new_street_segment.transform.position = Vector3.forward * (float)segment_distance_offset;
 
 		m_currentSegments.Add(segment);
+	}
+
+	void SetNextSegmentInfo()
+	{
+		int m_currentSegmentBeat = 0;
+		m_beatsPerSecond = 60.0f / (float)(m_currentSegments[0].BPM);
+		m_moveUnitsPerSecond = GameConstants.beatScale / m_beatsPerSecond;
+	}
+
+	void SetNextBeat()
+	{
+		m_timeSinceLastBeat = 0.0f;
+		m_currentBeatSuccess = false;
 	}
 }

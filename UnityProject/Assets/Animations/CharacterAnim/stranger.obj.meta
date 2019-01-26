@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 57c92614125b58c4fb60ed1a1d6f9034
+guid: fcfbd4653bcd434418498fc8adfe2f52
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: 180Jump3
+    100000: stranger
     100002: //RootNode
-    400000: 180Jump3
+    400000: stranger
     400002: //RootNode
     2100000: palette
-    2300000: 180Jump3
-    3300000: 180Jump3
-    4300000: 180Jump3
+    2300000: stranger
+    3300000: stranger
+    4300000: stranger
   externalObjects: {}
   materials:
     importMaterials: 1
