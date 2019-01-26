@@ -25,6 +25,4 @@ public class RhythmSegment : ScriptableObject {
 	public int BPM { get { return m_BPM; } }
 	public AudioClip Track { get { return m_track; } }
 	public ObstacleType[] BeatObstacles { get { return m_beatObstacles; } }
-
-
 }
