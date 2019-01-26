@@ -6,6 +6,7 @@ public class LevelController : MonoBehaviour {
 
 	[SerializeField]
 	private RhythmSegment[] m_baseSegments;
+	private int m_nextSegmentIdx = 0;
 
 	[SerializeField]
 	private ObstacleBuilder m_rhythmGenerator;
@@ -53,12 +54,14 @@ public class LevelController : MonoBehaviour {
 					break;
 				}
 				ConstructTrackSegment(m_baseSegments[i]);
+				++m_nextSegmentIdx;
 			}
 		}
 		else
 		{
 			for (int i = 0; i < m_baseSegments.Length; ++i) {
 				ConstructTrackSegment(m_baseSegments[i]);
+				++m_nextSegmentIdx;
 			}
 		}
 		SetNextSegmentInfo();
@@ -88,6 +91,39 @@ public class LevelController : MonoBehaviour {
 		m_currentSegments.Add(segment);
 	}
 
+	void FixedUpdate()
+	{
+		if(m_timeSinceLastBeat <= m_beatsPerSecond)
+		{
+			SetNextBeat();
+
+			// if we've passed the last beat for this segemnt try to move to the next one
+			if(m_currentSegmentBeat >= m_currentSegments[0].BeatObstacles.Length)
+			{
+				// if we have more than one segment then move on
+				if(m_currentSegments.Count > 1)
+				{
+					m_currentSegments.RemoveAt(0);
+					SetNextSegmentInfo();
+
+					// if we have another segment to create then lets do that
+					if (m_nextSegmentIdx < m_baseSegments.Length);
+					{
+						ConstructTrackSegment(m_baseSegments[m_nextSegmentIdx++]);
+					}
+				}
+				else {
+					// we'vre reached the end
+					Debug.Log("YAY :) You Win!!!!");
+				}
+			}
+		}
+		else
+		{
+			m_timeSinceLastBeat += Time.fixedDeltaTime;
+		}
+	}
+
 	void SetNextSegmentInfo()
 	{
 		int m_currentSegmentBeat = 0;
@@ -113,5 +149,6 @@ public class LevelController : MonoBehaviour {
 	{
 		m_timeSinceLastBeat = 0.0f;
 		m_currentBeatSuccess = false;
+		++m_currentSegmentBeat;
 	}
 }
