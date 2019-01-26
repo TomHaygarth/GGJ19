@@ -12,7 +12,7 @@ public class StreetBuilder : MonoBehaviour
     { // Creates buildings next to track
         GameObject streetSection = new GameObject();
 
-        for (int i = 0; i < rhythm.BeatObstacles.Length; i += 4)
+        for (int i = 1; i < rhythm.BeatObstacles.Length; i += 4)
         {
             if (rhythm.BeatObstacles[i] == RhythmSegment.ObstacleType.None)
             {
@@ -30,6 +30,10 @@ public class StreetBuilder : MonoBehaviour
             lBuild.transform.localPosition = new Vector3(-4, 0, 1 * i); ;
             lBuild.transform.Rotate(Vector3.up, 90);
         }
+        GameObject road = GameObject.Instantiate(_buildings[0]);
+        road.transform.SetParent(streetSection.transform, false);
+        road.transform.localPosition = new Vector3(0, 0, 1);
+        road.transform.localScale = new Vector3(1.6f, 0.4f, 1.5f);
         return streetSection;
     }
 
