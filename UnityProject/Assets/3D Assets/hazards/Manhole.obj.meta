@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: c933a3a9b7b75d649a2418da87b8e733
+guid: b927c9ac0a0947645af800cc6e371237
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: pathway
+    100000: Manhole
     100002: //RootNode
-    400000: pathway
+    400000: Manhole
     400002: //RootNode
     2100000: palette
-    2300000: pathway
-    3300000: pathway
-    4300000: pathway
+    2300000: Manhole
+    3300000: Manhole
+    4300000: Manhole
   externalObjects: {}
   materials:
     importMaterials: 1

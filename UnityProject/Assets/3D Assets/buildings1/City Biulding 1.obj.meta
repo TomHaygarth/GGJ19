@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: c933a3a9b7b75d649a2418da87b8e733
+guid: 0ace2df92eb1919428266bca0a81b958
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: pathway
-    100002: //RootNode
-    400000: pathway
-    400002: //RootNode
-    2100000: palette
-    2300000: pathway
-    3300000: pathway
-    4300000: pathway
+    100000: //RootNode
+    100002: City_Biulding_1
+    400000: //RootNode
+    400002: City_Biulding_1
+    2100000: City_Biulding_1Mat
+    2300000: City_Biulding_1
+    3300000: City_Biulding_1
+    4300000: City_Biulding_1
   externalObjects: {}
   materials:
     importMaterials: 1

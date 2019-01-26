@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: c933a3a9b7b75d649a2418da87b8e733
+guid: e1d54a0139ab90b44a0c46db5b6b2012
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: pathway
+    100000: herdel
     100002: //RootNode
-    400000: pathway
+    400000: herdel
     400002: //RootNode
     2100000: palette
-    2300000: pathway
-    3300000: pathway
-    4300000: pathway
+    2300000: herdel
+    3300000: herdel
+    4300000: herdel
   externalObjects: {}
   materials:
     importMaterials: 1
