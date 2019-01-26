@@ -31,12 +31,19 @@ public class LevelController : MonoBehaviour {
 
 	private const float m_beatTimeReactionPercantage = 0.5f;
 
+	[SerializeField]
+	private GameObject m_audioSourcesObject;
+	private AudioSource[]] m_audioSources;
+
 
 	[SerializeField]
 	bool m_generateFullTrack = false; // A bit of a hack flag to avoid pooling and building on the fly but will probably make the game run like ass
 
 	// Use this for initialization
 	void Start () {
+
+		m_audioSources = m_audioSourcesObject.GetComponents<AudioSource>();
+
 		if (m_generateFullTrack == false)
 		{
 		// generate first 3 segments
@@ -86,6 +93,20 @@ public class LevelController : MonoBehaviour {
 		int m_currentSegmentBeat = 0;
 		m_beatsPerSecond = 60.0f / (float)(m_currentSegments[0].BPM);
 		m_moveUnitsPerSecond = GameConstants.beatScale / m_beatsPerSecond;
+
+		// loop through all audio sources
+		for(int i = 0; i < m_audioSources.Length; ++i)
+		{
+			// stop the audio source
+			m_audioSources[i].Stop();
+
+			// if we have a track for this source play it
+			if (i < m_currentSegments[0].Tracks.Length)
+			{
+				m_audioSources[i].clip = m_currentSegments[0].Tracks[i];
+				m_audioSources[i].Play();
+			}
+		}
 	}
 
 	void SetNextBeat()
