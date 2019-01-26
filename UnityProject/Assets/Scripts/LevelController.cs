@@ -48,19 +48,18 @@ public class LevelController : MonoBehaviour {
 		if (m_generateFullTrack == false)
 		{
 		// generate first 3 segments
-			for (int i = 0; i < 3 ; ++i) {
-				if (i >= m_baseSegments.Length)
+			for (m_nextSegmentIdx = 0; m_nextSegmentIdx < 3 ; ++m_nextSegmentIdx) {
+				if (m_nextSegmentIdx >= m_baseSegments.Length)
 				{
 					break;
 				}
-				ConstructTrackSegment(m_baseSegments[i]);
-				++m_nextSegmentIdx;
+				ConstructTrackSegment(m_baseSegments[m_nextSegmentIdx]);
 			}
 		}
 		else
 		{
-			for (int i = 0; i < m_baseSegments.Length; ++i) {
-				ConstructTrackSegment(m_baseSegments[i]);
+			for (m_nextSegmentIdx = 0; m_nextSegmentIdx < m_baseSegments.Length; ++m_nextSegmentIdx) {
+				ConstructTrackSegment(m_baseSegments[m_nextSegmentIdx]);
 				++m_nextSegmentIdx;
 			}
 		}
@@ -93,8 +92,10 @@ public class LevelController : MonoBehaviour {
 
 	void FixedUpdate()
 	{
+		m_timeSinceLastBeat += Time.fixedDeltaTime;
 		if(m_timeSinceLastBeat >= m_beatsPerSecond)
 		{
+			Debug.LogFormat("m_timeSinceLastBeat : {0}", m_timeSinceLastBeat);
 			SetNextBeat();
 
 			// if we've passed the last beat for this segemnt try to move to the next one
@@ -109,7 +110,8 @@ public class LevelController : MonoBehaviour {
 					// if we have another segment to create then lets do that
 					if (m_nextSegmentIdx < m_baseSegments.Length);
 					{
-						ConstructTrackSegment(m_baseSegments[m_nextSegmentIdx++]);
+						ConstructTrackSegment(m_baseSegments[m_nextSegmentIdx]);
+						++m_nextSegmentIdx;
 					}
 				}
 				else {
@@ -118,17 +120,17 @@ public class LevelController : MonoBehaviour {
 				}
 			}
 		}
-		else
-		{
-			m_timeSinceLastBeat += Time.fixedDeltaTime;
-		}
 	}
 
 	void SetNextSegmentInfo()
 	{
-		int m_currentSegmentBeat = 0;
+		m_currentSegmentBeat = 0;
 		m_beatsPerSecond = 60.0f / (float)(m_currentSegments[0].BPM);
 		m_moveUnitsPerSecond = GameConstants.beatScale / m_beatsPerSecond;
+
+		Debug.LogFormat("m_beatsPerSecond : {0}", m_beatsPerSecond);
+		Debug.LogFormat("m_currentSegmentBeat : {0}", m_currentSegmentBeat);
+		Debug.LogFormat("m_timeSinceLastBeat : {0}", m_timeSinceLastBeat);
 
 		// loop through all audio sources
 		for(int i = 0; i < m_audioSources.Length; ++i)
@@ -147,7 +149,7 @@ public class LevelController : MonoBehaviour {
 
 	void SetNextBeat()
 	{
-		m_timeSinceLastBeat = 0.0f;
+		m_timeSinceLastBeat = Time.fixedDeltaTime;
 		m_currentBeatSuccess = false;
 		++m_currentSegmentBeat;
 	}
