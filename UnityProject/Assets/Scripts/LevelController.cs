@@ -97,6 +97,7 @@ public class LevelController : MonoBehaviour {
 		{
 			Debug.LogFormat("m_timeSinceLastBeat : {0}", m_timeSinceLastBeat);
 			SetNextBeat();
+			m_timeSinceLastBeat += Time.fixedDeltaTime;
 
 			// if we've passed the last beat for this segemnt try to move to the next one
 			if(m_currentSegmentBeat >= m_currentSegments[0].BeatObstacles.Length)
@@ -132,24 +133,25 @@ public class LevelController : MonoBehaviour {
 		Debug.LogFormat("m_currentSegmentBeat : {0}", m_currentSegmentBeat);
 		Debug.LogFormat("m_timeSinceLastBeat : {0}", m_timeSinceLastBeat);
 
-		// loop through all audio sources
-		for(int i = 0; i < m_audioSources.Length; ++i)
+		// loop through all track of next segment and find matching audio clips
+		var segment_tracks = m_currentSegments[0].Tracks;
+		for(int i = 0; i < segment_tracks.Length; ++i)
 		{
-			// stop the audio source
-			m_audioSources[i].Stop();
-
-			// if we have a track for this source play it
-			if (i < m_currentSegments[0].Tracks.Length)
+			for(int j = 0; j < m_audioSources.Length; ++j)
 			{
-				m_audioSources[i].clip = m_currentSegments[0].Tracks[i];
-				m_audioSources[i].Play();
+				if(segment_tracks[i] == m_audioSources[j].clip)
+				{
+					m_audioSources[j].Stop();
+					m_audioSources[j].Play();
+					break;
+				}
 			}
 		}
 	}
 
 	void SetNextBeat()
 	{
-		m_timeSinceLastBeat = Time.fixedDeltaTime;
+		m_timeSinceLastBeat = 0;
 		m_currentBeatSuccess = false;
 		++m_currentSegmentBeat;
 	}
