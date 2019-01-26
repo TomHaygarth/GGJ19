@@ -93,7 +93,7 @@ public class LevelController : MonoBehaviour {
 
 	void FixedUpdate()
 	{
-		if(m_timeSinceLastBeat <= m_beatsPerSecond)
+		if(m_timeSinceLastBeat >= m_beatsPerSecond)
 		{
 			SetNextBeat();
 
