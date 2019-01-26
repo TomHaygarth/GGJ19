@@ -206,16 +206,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _buildings:
-  - {fileID: 1612914538663840, guid: ac8b3b0df2b10df428cbfc2e680cdc29, type: 2}
+  - {fileID: 1126383932878868, guid: a0eabf7db58590643983b1b0f84bf677, type: 2}
   - {fileID: 1148628409736490, guid: f81edd9ec82e5934095d599a59bb4ae9, type: 2}
   - {fileID: 1534230803155658, guid: e15ad4cdbe528954ab1f6fd2aec91916, type: 2}
-  - {fileID: 1671462934922312, guid: a3a050540a4ba444dae65234c29532a0, type: 2}
-  - {fileID: 1507061898709326, guid: cc3fd5802c9faaf40a67e7881d074e81, type: 2}
   - {fileID: 1931675289026492, guid: 2b2a6fd769bbef84fa66deffab2bd21b, type: 2}
+  - {fileID: 1507061898709326, guid: cc3fd5802c9faaf40a67e7881d074e81, type: 2}
+  - {fileID: 1671462934922312, guid: a3a050540a4ba444dae65234c29532a0, type: 2}
   - {fileID: 1119420079265812, guid: a99cd3e457ebddd47a25cbf58e6c78ed, type: 2}
-  _path:
-  - {fileID: 1126383932878868, guid: a0eabf7db58590643983b1b0f84bf677, type: 2}
-  testBuild: {fileID: 0}
+  - {fileID: 1612914538663840, guid: ac8b3b0df2b10df428cbfc2e680cdc29, type: 2}
+  testBuild: {fileID: 11400000, guid: 8828e4cdfe0fd864386e54a7c824191f, type: 2}
 --- !u!4 &294141370
 Transform:
   m_ObjectHideFlags: 0
