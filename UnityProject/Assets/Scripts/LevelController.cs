@@ -39,7 +39,7 @@ public class LevelController : MonoBehaviour {
 		}
 		else
 		{
-			for (int i = 0; i < m_baseSegments.Lengt; ++i) {
+			for (int i = 0; i < m_baseSegments.Length; ++i) {
 				ConstructTrackSegment(m_baseSegments[i]);
 			}
 		}
