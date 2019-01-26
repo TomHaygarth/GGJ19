@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7b0dabdd8ddb9854989326e42fffc257
+guid: acae54c939d3bb34ab9d742184a1167b
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -8,6 +8,7 @@ ModelImporter:
     400000: GGJ2019-Assetbuilding1
     400002: //RootNode
     2100000: palette
+    2100002: GGJ2019-Assetbuilding1Mat
     2300000: GGJ2019-Assetbuilding1
     3300000: GGJ2019-Assetbuilding1
     4300000: GGJ2019-Assetbuilding1
