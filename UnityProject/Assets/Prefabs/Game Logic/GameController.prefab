@@ -562,7 +562,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a7f0e90e7ad46f5b48cf8a9b1da9fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_baseSegments: []
+  m_baseSegments:
+  - {fileID: 11400000, guid: c9627d5711f68d24696640cec943ce2a, type: 2}
+  - {fileID: 11400000, guid: e449cb4fbc87d5c4c955fdb83528b690, type: 2}
+  - {fileID: 11400000, guid: 52b09732844761f4c817fe41f13b6916, type: 2}
   m_rhythmGenerator: {fileID: 114328229614851416}
   m_streetGenerator: {fileID: 114637238179754114}
   m_levelLength: 60
