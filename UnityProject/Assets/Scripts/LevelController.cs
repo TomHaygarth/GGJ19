@@ -33,7 +33,7 @@ public class LevelController : MonoBehaviour {
 
 	[SerializeField]
 	private GameObject m_audioSourcesObject;
-	private AudioSource[]] m_audioSources;
+	private AudioSource[] m_audioSources;
 
 
 	[SerializeField]
