@@ -13,4 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_track: {fileID: 0}
   m_BPM: 125
-  m_beatObstacles: 
+  m_beatObstacles: 010000000300000002000000000000000100000003000000

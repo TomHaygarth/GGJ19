@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class rhythGen : MonoBehaviour {
+public class ObstacleBuilder : MonoBehaviour {
 
     [SerializeField]
     private GameObject[] _obstacles;

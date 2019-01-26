@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenuAttribute(menuName="create/rhythm segment")]
+[CreateAssetMenu(menuName="Custom/Rhythm Segment")]
 public class RhythmSegment : ScriptableObject {
 
 	public enum ObstacleType

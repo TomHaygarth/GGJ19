@@ -1,22 +1,22 @@
 fileFormatVersion: 2
-guid: a961042f43c83f94295527f4f80fdaa7
+guid: d88ea92c059cb85469047fc9a4215535
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Flat_building_Red
+    100000: Super
     100002: //RootNode
-    400000: Flat_building_Red
+    400000: Super
     400002: //RootNode
     2100000: palette
-    2300000: Flat_building_Red
-    3300000: Flat_building_Red
-    4300000: Flat_building_Red
+    2300000: Super
+    3300000: Super
+    4300000: Super
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: palette
-    second: {fileID: 2100000, guid: 1c3f137b9cc94374c9fc29332b53a0ac, type: 2}
+    second: {fileID: 2100000, guid: 380e7cbb836b6e845a878c474e0893eb, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
