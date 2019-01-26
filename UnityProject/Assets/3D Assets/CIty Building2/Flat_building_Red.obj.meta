@@ -1,22 +1,17 @@
 fileFormatVersion: 2
-guid: 7b0dabdd8ddb9854989326e42fffc257
+guid: a961042f43c83f94295527f4f80fdaa7
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: GGJ2019-Assetbuilding1
+    100000: Flat_building_Red
     100002: //RootNode
-    400000: GGJ2019-Assetbuilding1
+    400000: Flat_building_Red
     400002: //RootNode
     2100000: palette
-    2300000: GGJ2019-Assetbuilding1
-    3300000: GGJ2019-Assetbuilding1
-    4300000: GGJ2019-Assetbuilding1
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: palette
-    second: {fileID: 2100000, guid: 5ef6aa9e9c7e1fc41a88473ab93a317a, type: 2}
+    2300000: Flat_building_Red
+    3300000: Flat_building_Red
+    4300000: Flat_building_Red
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0

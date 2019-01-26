@@ -1,10 +1,10 @@
 # MagicaVoxel @ Ephtracy
 
 # group
-g GGJ2019-Assetbuilding1
+g Flat_building_Red
 
 # material
-mtllib GGJ2019-Assetbuilding1.mtl
+mtllib Flat_building_Red.mtl
 usemtl palette
 
 # normals
