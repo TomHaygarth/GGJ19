@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4491071881604168}
   m_Layer: 0
-  m_Name: GGJ2019_Hotel
+  m_Name: Hotel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
