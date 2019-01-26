@@ -12,11 +12,12 @@ public class LevelController : MonoBehaviour {
 	private float m_levelLength = 60.0f;
 	private float m_currentLevelTime = 0.0f;
 
-	// level controler will populate obstacles and parent them to an ever moving root object
-	// total distance to move will be dependent on the current bpm and the level length
 	[SerializeField]
 	private Transform m_movingRoot;
-	private float m_distanceToMoveRoot;
+	private readonly Vector3 m_movingRootDirection = new Vector3(0.0f, 0.0f, -1.0f);
+
+	private List<RhythmSegment> m_currentSegments;
+
 
 	// Use this for initialization
 	void Start () {
