@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: c933a3a9b7b75d649a2418da87b8e733
+guid: 6a18b58b1ddb2e34eab7c69214145fe7
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: pathway
+    100000: Bin
     100002: //RootNode
-    400000: pathway
+    400000: Bin
     400002: //RootNode
     2100000: palette
-    2300000: pathway
-    3300000: pathway
-    4300000: pathway
+    2300000: Bin
+    3300000: Bin
+    4300000: Bin
   externalObjects: {}
   materials:
     importMaterials: 1

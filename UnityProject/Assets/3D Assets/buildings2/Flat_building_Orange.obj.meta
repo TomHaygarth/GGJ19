@@ -1,17 +1,23 @@
 fileFormatVersion: 2
-guid: c933a3a9b7b75d649a2418da87b8e733
+guid: acae54c939d3bb34ab9d742184a1167b
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: pathway
+    100000: GGJ2019-Assetbuilding1
     100002: //RootNode
-    400000: pathway
+    400000: GGJ2019-Assetbuilding1
     400002: //RootNode
     2100000: palette
-    2300000: pathway
-    3300000: pathway
-    4300000: pathway
-  externalObjects: {}
+    2100002: GGJ2019-Assetbuilding1Mat
+    2300000: GGJ2019-Assetbuilding1
+    3300000: GGJ2019-Assetbuilding1
+    4300000: GGJ2019-Assetbuilding1
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: palette
+    second: {fileID: 2100000, guid: 5ef6aa9e9c7e1fc41a88473ab93a317a, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
