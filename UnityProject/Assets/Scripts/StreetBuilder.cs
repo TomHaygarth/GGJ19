@@ -9,7 +9,7 @@ public class StreetBuilder : MonoBehaviour
     private GameObject[] _buildings;
     public GameObject[] _path;
 
-    GameObject streetLine(RhythmSegment rhythm)
+    public GameObject streetLine(RhythmSegment rhythm)
     { // Creates buildings next to track
         GameObject streetSection = new GameObject();
 
