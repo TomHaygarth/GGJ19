@@ -19,6 +19,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4295599222405964}
+  - component: {fileID: 95392445436729274}
+  - component: {fileID: 114894488124629914}
   m_Layer: 0
   m_Name: Blueberry Shop
   m_TagString: Untagged
@@ -112,3 +114,33 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1743664415700148}
   m_Mesh: {fileID: 4300000, guid: eb4b01a7a40f0db4aaf02354bd3ba110, type: 3}
+--- !u!95 &95392445436729274
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1671462934922312}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9d3ad6ac2a34bd347bb0de8bc187c18e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114894488124629914
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1671462934922312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7e9b5deea4cec14e84c78e070475f97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildAnim: {fileID: 95392445436729274}

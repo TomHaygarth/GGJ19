@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 23596662608477114}
   - component: {fileID: 198401952546528506}
   - component: {fileID: 199219927315629696}
+  - component: {fileID: 95139431529871172}
+  - component: {fileID: 114698663032390328}
   m_Layer: 0
   m_Name: Home
   m_TagString: Untagged
@@ -85,6 +87,36 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1282739947120906}
   m_Mesh: {fileID: 4300000, guid: 2b4e56be188bcc046ba7581426590e75, type: 3}
+--- !u!95 &95139431529871172
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1282739947120906}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9d3ad6ac2a34bd347bb0de8bc187c18e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114698663032390328
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1282739947120906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7e9b5deea4cec14e84c78e070475f97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildAnim: {fileID: 0}
 --- !u!198 &198401952546528506
 ParticleSystem:
   m_ObjectHideFlags: 1

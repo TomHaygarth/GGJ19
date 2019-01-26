@@ -19,6 +19,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4491071881604168}
+  - component: {fileID: 95738363896510000}
+  - component: {fileID: 114985014467876386}
   m_Layer: 0
   m_Name: Hotel
   m_TagString: Untagged
@@ -112,3 +114,33 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1644628351395136}
   m_Mesh: {fileID: 4300000, guid: e2e4e034cbcb5144a85b139b59463391, type: 3}
+--- !u!95 &95738363896510000
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1148628409736490}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9d3ad6ac2a34bd347bb0de8bc187c18e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114985014467876386
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1148628409736490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7e9b5deea4cec14e84c78e070475f97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildAnim: {fileID: 95738363896510000}

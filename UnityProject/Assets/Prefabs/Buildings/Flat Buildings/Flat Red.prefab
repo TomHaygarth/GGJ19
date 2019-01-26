@@ -36,6 +36,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4281972228122112}
+  - component: {fileID: 95782433820978600}
+  - component: {fileID: 114470087809885498}
   m_Layer: 0
   m_Name: Flat Red
   m_TagString: Untagged
@@ -112,3 +114,33 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1458909879923910}
   m_Mesh: {fileID: 4300000, guid: a961042f43c83f94295527f4f80fdaa7, type: 3}
+--- !u!95 &95782433820978600
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1612914538663840}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9d3ad6ac2a34bd347bb0de8bc187c18e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114470087809885498
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1612914538663840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7e9b5deea4cec14e84c78e070475f97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildAnim: {fileID: 95782433820978600}
