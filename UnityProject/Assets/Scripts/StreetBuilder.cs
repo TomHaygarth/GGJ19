@@ -22,19 +22,23 @@ public class StreetBuilder : MonoBehaviour
             int idx = Random.Range(0, _buildings.Length);
             GameObject rBuild = GameObject.Instantiate(_buildings[idx]);
             rBuild.transform.SetParent(streetSection.transform, false);
-            rBuild.transform.localPosition = new Vector3(4, 0, 1 * i); ;
+            rBuild.transform.localPosition = new Vector3(4, 0, GameConstants.beatScale * i); ;
             rBuild.transform.Rotate(Vector3.up,-90);
 
             idx = Random.Range(0, _buildings.Length);
             GameObject lBuild = GameObject.Instantiate(_buildings[idx]);
             lBuild.transform.SetParent(streetSection.transform, false);
-            lBuild.transform.localPosition = new Vector3(-4, 0, 1 * i); ;
+            lBuild.transform.localPosition = new Vector3(-4, 0, GameConstants.beatScale * i); ;
             lBuild.transform.Rotate(Vector3.up, 90);
         }
-        GameObject road = GameObject.Instantiate(_path[0]);
-        road.transform.SetParent(streetSection.transform, false);
-        road.transform.localPosition = new Vector3(0, 0, 1);
-        road.transform.localScale = new Vector3(1.6f, 0.4f, 1.5f);
+        GameObject road1 = GameObject.Instantiate(_path[0]);
+        road1.transform.SetParent(streetSection.transform, false);
+        road1.transform.localPosition = new Vector3(0, 0, 1);
+        road1.transform.localScale = new Vector3(1.8f, 0.4f, GameConstants.beatScale);
+        GameObject road2 = GameObject.Instantiate(_path[0]);
+        road2.transform.SetParent(streetSection.transform, false);
+        road2.transform.localPosition = new Vector3(0, 0, 10);
+        road2.transform.localScale = new Vector3(1.8f, 0.4f, GameConstants.beatScale);
         return streetSection;
     }
 

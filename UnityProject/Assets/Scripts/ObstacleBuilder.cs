@@ -19,17 +19,17 @@ public class ObstacleBuilder : MonoBehaviour {
             obstacle.transform.SetParent(segment.transform, false);
             switch (rhythm.BeatObstacles[i]) {
                 case RhythmSegment.ObstacleType.Left_Side:
-                    obstacle.transform.localPosition = new Vector3(-1, 0, 1 * i); ;
+                    obstacle.transform.localPosition = new Vector3(-1, 0, GameConstants.beatScale * i); ;
                     break;
                 case RhythmSegment.ObstacleType.Right_Side:
-                    obstacle.transform.localPosition = new Vector3(1, 0, 1 * i); ;
+                    obstacle.transform.localPosition = new Vector3(1, 0, GameConstants.beatScale * i); ;
                     break;
                 case RhythmSegment.ObstacleType.Both_Sides:
                     idx = Random.Range(0, _obstacles.Length);
                     GameObject altObstacle = GameObject.Instantiate(_obstacles[idx]);
                     altObstacle.transform.SetParent(segment.transform, false);
-                    obstacle.transform.localPosition = new Vector3(-1, 0, 1 * i); ;
-                    altObstacle.transform.localPosition = new Vector3(1, 0, 1 * i); ;
+                    obstacle.transform.localPosition = new Vector3(-1, 0, GameConstants.beatScale * i); ;
+                    altObstacle.transform.localPosition = new Vector3(1, 0, GameConstants.beatScale * i); ;
                     break;
             }
         }
