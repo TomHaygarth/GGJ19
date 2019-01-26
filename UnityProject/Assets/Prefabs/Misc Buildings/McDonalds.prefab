@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4090381926793140}
   m_Layer: 0
-  m_Name: Mcdonload
+  m_Name: McDonalds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
