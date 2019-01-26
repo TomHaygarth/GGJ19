@@ -9,6 +9,8 @@ public class LevelController : MonoBehaviour {
 
 	[SerializeField]
 	private ObstacleBuilder m_rhythmGenerator;
+	[SerializeField]
+	private StreetBuilder m_streetGenerator;
 
 	[SerializeField]
 	private float m_levelLength = 60.0f;
@@ -60,6 +62,11 @@ public class LevelController : MonoBehaviour {
 		GameObject new_segment = m_rhythmGenerator.obCreate(segment);
 		new_segment.transform.SetParent(m_movingRoot, false);
 		new_segment.transform.position = Vector3.forward * (float)segment_distance_offset;
+
+		GameObject new_street_segment = m_streetGenerator.streetLine(segment);
+		new_street_segment.transform.SetParent(m_movingRoot, false);
+		new_street_segment.transform.position = Vector3.forward * (float)segment_distance_offset;
+
 		m_currentSegments.Add(segment);
 	}
 }

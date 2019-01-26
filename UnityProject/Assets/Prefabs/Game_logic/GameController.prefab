@@ -1,0 +1,157 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1259526003364778}
+  m_IsPrefabParent: 1
+--- !u!1 &1259526003364778
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4405917965626092}
+  - component: {fileID: 114906164027451360}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1412675520726894
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4302022308842744}
+  - component: {fileID: 114328229614851416}
+  m_Layer: 0
+  m_Name: Hazard Builder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1974269824434714
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4663774035247842}
+  - component: {fileID: 114637238179754114}
+  m_Layer: 0
+  m_Name: Street Builder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4302022308842744
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1412675520726894}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4405917965626092}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4405917965626092
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1259526003364778}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4663774035247842}
+  - {fileID: 4302022308842744}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4663774035247842
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1974269824434714}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4405917965626092}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114328229614851416
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1412675520726894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 272e058ca072ca547a90c10b52528453, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _obstacles:
+  - {fileID: 1373676114417532, guid: 18c52f4b4669af04eb8b66a425d6f911, type: 2}
+  - {fileID: 1017074824742206, guid: e983fe9f76d55d74596101230cd0cfe8, type: 2}
+  - {fileID: 1888166518561374, guid: 57adadfff7cacb449a99fda23b686f93, type: 2}
+  testOb: {fileID: 0}
+--- !u!114 &114637238179754114
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1974269824434714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a1b2ddd36f4e214496b52375ca893dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _buildings:
+  - {fileID: 1612914538663840, guid: ac8b3b0df2b10df428cbfc2e680cdc29, type: 2}
+  - {fileID: 1148628409736490, guid: f81edd9ec82e5934095d599a59bb4ae9, type: 2}
+  - {fileID: 1534230803155658, guid: e15ad4cdbe528954ab1f6fd2aec91916, type: 2}
+  - {fileID: 1671462934922312, guid: a3a050540a4ba444dae65234c29532a0, type: 2}
+  - {fileID: 1507061898709326, guid: cc3fd5802c9faaf40a67e7881d074e81, type: 2}
+  - {fileID: 1931675289026492, guid: 2b2a6fd769bbef84fa66deffab2bd21b, type: 2}
+  - {fileID: 1119420079265812, guid: a99cd3e457ebddd47a25cbf58e6c78ed, type: 2}
+  _path:
+  - {fileID: 1126383932878868, guid: a0eabf7db58590643983b1b0f84bf677, type: 2}
+  testBuild: {fileID: 0}
+--- !u!114 &114906164027451360
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1259526003364778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3a7f0e90e7ad46f5b48cf8a9b1da9fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_baseSegments: []
+  m_rhythmGenerator: {fileID: 114328229614851416}
+  m_streetGenerator: {fileID: 114637238179754114}
+  m_levelLength: 60
+  m_movingRoot: {fileID: 0}
+  m_generateFullTrack: 0
