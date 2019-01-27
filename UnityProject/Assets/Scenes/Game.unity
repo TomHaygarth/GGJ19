@@ -160,7 +160,7 @@ Light:
     m_Bits: 4294967295
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 1.5
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -171,13 +171,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 246565491}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.41900265, y: -0.11829695, z: 0.05516277, w: 0.8985542}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 50, y: -15, z: 0}
 --- !u!1001 &425553808
 Prefab:
   m_ObjectHideFlags: 0
@@ -185,6 +185,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114328229614851416, guid: 0d35955972a7c466abffc66529607258,
+        type: 2}
+      propertyPath: _obstacles.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4405917965626092, guid: 0d35955972a7c466abffc66529607258, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -222,6 +227,36 @@ Prefab:
       propertyPath: m_movingRoot
       value: 
       objectReference: {fileID: 2123744010}
+    - target: {fileID: 114328229614851416, guid: 0d35955972a7c466abffc66529607258,
+        type: 2}
+      propertyPath: _obstacles.Array.data[1]
+      value: 
+      objectReference: {fileID: 1747865081387626, guid: 9606a383f53f944c88198372ec2fa77a,
+        type: 2}
+    - target: {fileID: 114328229614851416, guid: 0d35955972a7c466abffc66529607258,
+        type: 2}
+      propertyPath: _obstacles.Array.data[2]
+      value: 
+      objectReference: {fileID: 1074681457462158, guid: 787bae2d48b4c450092ac0596eca8205,
+        type: 2}
+    - target: {fileID: 114328229614851416, guid: 0d35955972a7c466abffc66529607258,
+        type: 2}
+      propertyPath: _obstacles.Array.data[3]
+      value: 
+      objectReference: {fileID: 1089344543356016, guid: b2acf46ac328b494eb616f6127fd6c82,
+        type: 2}
+    - target: {fileID: 114328229614851416, guid: 0d35955972a7c466abffc66529607258,
+        type: 2}
+      propertyPath: _obstacles.Array.data[0]
+      value: 
+      objectReference: {fileID: 1042746272383016, guid: 0c8063d6fe9834e1eb660caf2047f4d8,
+        type: 2}
+    - target: {fileID: 114637238179754114, guid: 0d35955972a7c466abffc66529607258,
+        type: 2}
+      propertyPath: _path.Array.data[0]
+      value: 
+      objectReference: {fileID: 1126383932878868, guid: a0eabf7db58590643983b1b0f84bf677,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d35955972a7c466abffc66529607258, type: 2}
   m_IsPrefabParent: 0
@@ -276,7 +311,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 55
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -300,13 +335,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2100337957}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.13052616, y: 0, z: 0, w: 0.9914449}
   m_LocalPosition: {x: 0, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 15, y: 0, z: 0}
 --- !u!45 &2100337962
 Skybox:
   m_ObjectHideFlags: 0

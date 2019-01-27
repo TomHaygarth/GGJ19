@@ -662,9 +662,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c9627d5711f68d24696640cec943ce2a, type: 2}
   - {fileID: 11400000, guid: e449cb4fbc87d5c4c955fdb83528b690, type: 2}
   - {fileID: 11400000, guid: 52b09732844761f4c817fe41f13b6916, type: 2}
+  - {fileID: 11400000, guid: 5a213dfb28088aa4eaf018059211802c, type: 2}
   m_rhythmGenerator: {fileID: 114328229614851416}
   m_streetGenerator: {fileID: 114637238179754114}
   m_levelLength: 60
   m_movingRoot: {fileID: 0}
   m_audioSourcesObject: {fileID: 1624353887173430}
-  m_generateFullTrack: 0
+  m_generateFullTrack: 1
