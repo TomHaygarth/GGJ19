@@ -971,11 +971,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 272e058ca072ca547a90c10b52528453, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _obstacles:
-  - {fileID: 1042746272383016, guid: 0c8063d6fe9834e1eb660caf2047f4d8, type: 2}
-  - {fileID: 1747865081387626, guid: 9606a383f53f944c88198372ec2fa77a, type: 2}
-  - {fileID: 1074681457462158, guid: 787bae2d48b4c450092ac0596eca8205, type: 2}
-  - {fileID: 1089344543356016, guid: b2acf46ac328b494eb616f6127fd6c82, type: 2}
+  _obstacle_left: {fileID: 1516421560812908, guid: f298a5cfb7795284cac451eee787b1cd,
+    type: 2}
+  _obstacle_right: {fileID: 1806318118919228, guid: f12099345ae529f40ab7f0ec693dd2c6,
+    type: 2}
   testOb: {fileID: 0}
 --- !u!114 &114412920242281394
 MonoBehaviour:
@@ -1380,7 +1379,7 @@ RectTransform:
   m_Children:
   - {fileID: 224009850229533236}
   m_Father: {fileID: 224197290008938966}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -1397,8 +1396,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 224124007861929040}
   - {fileID: 224825472972076218}
+  - {fileID: 224124007861929040}
   m_Father: {fileID: 224547650612232550}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1475,7 +1474,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 224197290008938966}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}

@@ -5,7 +5,9 @@ using UnityEngine;
 public class ObstacleBuilder : MonoBehaviour {
 
     [SerializeField]
-    private GameObject[] _obstacles;
+    private GameObject _obstacle_left;
+    [SerializeField]
+    private GameObject _obstacle_right;
 
     public GameObject obCreate(RhythmSegment rhythm) { // Creates obstacles on track
         GameObject segment = new GameObject();
@@ -14,20 +16,26 @@ public class ObstacleBuilder : MonoBehaviour {
             if (rhythm.BeatObstacles[i] == RhythmSegment.ObstacleType.None) {
                 continue;
             }
-            int idx = Random.Range(0, _obstacles.Length);
-            GameObject obstacle = GameObject.Instantiate(_obstacles[idx]);
-            obstacle.transform.SetParent(segment.transform, false);
+            GameObject obstacle;
             switch (rhythm.BeatObstacles[i]) {
                 case RhythmSegment.ObstacleType.Left_Side:
+                    obstacle = GameObject.Instantiate(_obstacle_left);
+                    obstacle.transform.SetParent(segment.transform, false);
                     obstacle.transform.localPosition = new Vector3(-1, 0, GameConstants.beatScale * i); ;
                     break;
                 case RhythmSegment.ObstacleType.Right_Side:
+                    obstacle = GameObject.Instantiate(_obstacle_right);
+                    obstacle.transform.SetParent(segment.transform, false);
+
                     obstacle.transform.localPosition = new Vector3(1, 0, GameConstants.beatScale * i); ;
                     break;
                 case RhythmSegment.ObstacleType.Both_Sides:
-                    idx = Random.Range(0, _obstacles.Length);
-                    GameObject altObstacle = GameObject.Instantiate(_obstacles[idx]);
+                    obstacle = GameObject.Instantiate(_obstacle_left);
+                    obstacle.transform.SetParent(segment.transform, false);
+
+                    GameObject altObstacle = GameObject.Instantiate(_obstacle_right);
                     altObstacle.transform.SetParent(segment.transform, false);
+
                     obstacle.transform.localPosition = new Vector3(-1, 0, GameConstants.beatScale * i); ;
                     altObstacle.transform.localPosition = new Vector3(1, 0, GameConstants.beatScale * i); ;
                     break;
