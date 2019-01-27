@@ -128,6 +128,15 @@ public class LevelController : MonoBehaviour {
 					m_currentSegments.RemoveAt(0);
 					SetNextSegmentInfo();
 
+					if ( m_movingRoot.childCount > 3)
+					{
+						// bit of a quick hack to try and tidy up
+						// destroys the generated decorations
+						Destroy(m_movingRoot.GetChild(2).gameObject, 0.5f);
+						// destroys the generated obstacles
+						Destroy(m_movingRoot.GetChild(1).gameObject, 0.5f);
+					}
+
 					// if we have another segment to create then lets do that
 					if (m_generateFullTrack == false && m_nextSegmentIdx < m_baseSegments.Length)
 					{
