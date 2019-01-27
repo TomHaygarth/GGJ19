@@ -6,8 +6,8 @@ public class buildingBounce : MonoBehaviour
 {
     [SerializeField]
     Animator buildAnim;
-    public void bounce() {
-        if (buildAnim != null)
+    public void bounce(float score) {
+        if (buildAnim != null && score > .5f)
         {
             buildAnim.SetTrigger("bounce");
         }
@@ -29,11 +29,13 @@ public class buildingBounce : MonoBehaviour
             OnScoreChanged(0.0f);
             LevelController.onScoreChanged += OnScoreChanged;
         }
+        LevelController.onBeatChange += bounce;
     }
 
     void OnDestroy()
     {
         LevelController.onScoreChanged -= OnScoreChanged;
+        LevelController.onBeatChange -= bounce;
     }
 
     void OnScoreChanged(float newScore)
