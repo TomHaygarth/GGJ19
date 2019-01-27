@@ -40,8 +40,10 @@ public class LevelController : MonoBehaviour {
 	[SerializeField]
 	bool m_generateFullTrack = false; // A bit of a hack flag to avoid pooling and building on the fly but will probably make the game run like ass
 
+	bool m_levelStarted = false;
+
 	// Use this for initialization
-	void Start () {
+	IEnumerator Start () {
 
 		m_audioSources = m_audioSourcesObject.GetComponents<AudioSource>();
 
@@ -58,16 +60,22 @@ public class LevelController : MonoBehaviour {
 		}
 		else
 		{
+			Debug.Log("Constructing");
 			for (m_nextSegmentIdx = 0; m_nextSegmentIdx < m_baseSegments.Length; ++m_nextSegmentIdx) {
 				ConstructTrackSegment(m_baseSegments[m_nextSegmentIdx]);
-				++m_nextSegmentIdx;
 			}
 		}
+
+		yield return new WaitForSeconds(4.0f);
+
 		SetNextSegmentInfo();
+		m_levelStarted = true;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if (m_levelStarted == false)
+			return;
 		m_movingRoot.localPosition += (m_movingRootDirection * (m_moveUnitsPerSecond * Time.deltaTime));
 	}
 
@@ -81,17 +89,19 @@ public class LevelController : MonoBehaviour {
 
 		GameObject new_segment = m_rhythmGenerator.obCreate(segment);
 		new_segment.transform.SetParent(m_movingRoot, false);
-		new_segment.transform.position = Vector3.forward * (float)segment_distance_offset;
+		new_segment.transform.position = Vector3.forward * (float)segment_distance_offset * GameConstants.beatScale;
 
 		GameObject new_street_segment = m_streetGenerator.streetLine(segment);
 		new_street_segment.transform.SetParent(m_movingRoot, false);
-		new_street_segment.transform.position = Vector3.forward * (float)segment_distance_offset;
+		new_street_segment.transform.position = Vector3.forward * (float)segment_distance_offset * GameConstants.beatScale;
 
 		m_currentSegments.Add(segment);
 	}
 
 	void FixedUpdate()
 	{
+		if (m_levelStarted == false)
+			return;
 		m_timeSinceLastBeat += Time.fixedDeltaTime;
 		if(m_timeSinceLastBeat >= m_beatsPerSecond)
 		{
@@ -109,7 +119,7 @@ public class LevelController : MonoBehaviour {
 					SetNextSegmentInfo();
 
 					// if we have another segment to create then lets do that
-					if (m_nextSegmentIdx < m_baseSegments.Length);
+					if (m_generateFullTrack == false && m_nextSegmentIdx < m_baseSegments.Length)
 					{
 						ConstructTrackSegment(m_baseSegments[m_nextSegmentIdx]);
 						++m_nextSegmentIdx;
