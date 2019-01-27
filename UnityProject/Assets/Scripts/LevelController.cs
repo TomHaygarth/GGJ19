@@ -42,6 +42,16 @@ public class LevelController : MonoBehaviour {
 
 	bool m_levelStarted = false;
 
+	private float m_simpleScore = 0.0f;
+
+	// Quick hack to get a global score event that can be registerd to from anywhere
+	public static event System.Action<float> onScoreChanged;
+	void Awake()
+	{
+		// as it's static we should flush this each time we start. Again, HACKEY!
+		onScoreChanged = delegate {};
+	}
+
 	// Use this for initialization
 	IEnumerator Start () {
 
@@ -128,6 +138,39 @@ public class LevelController : MonoBehaviour {
 				else {
 					// we'vre reached the end
 					Debug.Log("YAY :) You Win!!!!");
+					m_levelStarted = false;
+				}
+			}
+		}
+		else
+		{
+			if (m_currentBeatSuccess == false)
+			{
+				var current_obstacles = m_currentSegments[0].BeatObstacles;
+				if(current_obstacles[m_currentSegmentBeat] == RhythmSegment.ObstacleType.None)
+				{
+					m_currentBeatSuccess = true;
+				}
+				else if(current_obstacles[m_currentSegmentBeat] == RhythmSegment.ObstacleType.Left_Side
+				&& Input.GetKeyDown(KeyCode.LeftArrow))
+				{
+					m_currentBeatSuccess = true;
+					m_simpleScore = Mathf.Clamp01(m_simpleScore + 0.05f);
+					onScoreChanged(m_simpleScore);
+				}
+				else if(current_obstacles[m_currentSegmentBeat] == RhythmSegment.ObstacleType.Right_Side
+					 && Input.GetKeyDown(KeyCode.RightArrow))
+				{
+					m_currentBeatSuccess = true;
+					m_simpleScore = Mathf.Clamp01(m_simpleScore + 0.1f);
+					onScoreChanged(m_simpleScore);
+				}
+				else if(current_obstacles[m_currentSegmentBeat] == RhythmSegment.ObstacleType.Both_Sides
+					 && Input.GetKeyDown(KeyCode.UpArrow))
+				{
+					m_currentBeatSuccess = true;
+					m_simpleScore = Mathf.Clamp01(m_simpleScore + 0.05f);
+					onScoreChanged(m_simpleScore);
 				}
 			}
 		}
@@ -161,6 +204,12 @@ public class LevelController : MonoBehaviour {
 
 	void SetNextBeat()
 	{
+		// if we failed to get a score then decrease our overall score
+		if (m_currentBeatSuccess == false)
+		{
+			m_simpleScore = Mathf.Clamp01(m_simpleScore - 0.01f);
+			onScoreChanged(m_simpleScore);
+		}
 		m_timeSinceLastBeat = 0;
 		m_currentBeatSuccess = false;
 		++m_currentSegmentBeat;

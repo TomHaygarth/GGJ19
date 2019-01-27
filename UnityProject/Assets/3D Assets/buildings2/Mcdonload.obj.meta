@@ -11,7 +11,12 @@ ModelImporter:
     2300000: Mcdonload
     3300000: Mcdonload
     4300000: Mcdonload
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: palette
+    second: {fileID: 2100000, guid: 8977915a0721344c29d320e62e7ce2ff, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
