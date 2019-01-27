@@ -222,6 +222,62 @@ Prefab:
       propertyPath: m_movingRoot
       value: 
       objectReference: {fileID: 2123744010}
+    - target: {fileID: 114555791688434336, guid: 0d35955972a7c466abffc66529607258,
+        type: 2}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114462949104282366, guid: 0d35955972a7c466abffc66529607258,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2e8ab0048998802468e3fc7a33acfddf,
+        type: 3}
+    - target: {fileID: 114462949104282366, guid: 0d35955972a7c466abffc66529607258,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224894418770455604, guid: 0d35955972a7c466abffc66529607258,
+        type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224894418770455604, guid: 0d35955972a7c466abffc66529607258,
+        type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224894418770455604, guid: 0d35955972a7c466abffc66529607258,
+        type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224894418770455604, guid: 0d35955972a7c466abffc66529607258,
+        type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224894418770455604, guid: 0d35955972a7c466abffc66529607258,
+        type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 114462949104282366, guid: 0d35955972a7c466abffc66529607258,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114462949104282366, guid: 0d35955972a7c466abffc66529607258,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114462949104282366, guid: 0d35955972a7c466abffc66529607258,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d35955972a7c466abffc66529607258, type: 2}
   m_IsPrefabParent: 0
