@@ -621,9 +621,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _obstacles:
-  - {fileID: 1373676114417532, guid: 18c52f4b4669af04eb8b66a425d6f911, type: 2}
-  - {fileID: 1017074824742206, guid: e983fe9f76d55d74596101230cd0cfe8, type: 2}
-  - {fileID: 1888166518561374, guid: 57adadfff7cacb449a99fda23b686f93, type: 2}
+  - {fileID: 1042746272383016, guid: 0c8063d6fe9834e1eb660caf2047f4d8, type: 2}
+  - {fileID: 1747865081387626, guid: 9606a383f53f944c88198372ec2fa77a, type: 2}
+  - {fileID: 1074681457462158, guid: 787bae2d48b4c450092ac0596eca8205, type: 2}
+  - {fileID: 1089344543356016, guid: b2acf46ac328b494eb616f6127fd6c82, type: 2}
   testOb: {fileID: 0}
 --- !u!114 &114637238179754114
 MonoBehaviour:
@@ -645,7 +646,7 @@ MonoBehaviour:
   - {fileID: 1931675289026492, guid: 2b2a6fd769bbef84fa66deffab2bd21b, type: 2}
   - {fileID: 1119420079265812, guid: a99cd3e457ebddd47a25cbf58e6c78ed, type: 2}
   _path:
-  - {fileID: 1363649349241758, guid: 2de4d70cbb6274135b14087faf4aec6e, type: 2}
+  - {fileID: 1126383932878868, guid: a0eabf7db58590643983b1b0f84bf677, type: 2}
   testBuild: {fileID: 0}
 --- !u!114 &114906164027451360
 MonoBehaviour:
