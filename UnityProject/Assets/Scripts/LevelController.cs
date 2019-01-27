@@ -38,11 +38,20 @@ public class LevelController : MonoBehaviour {
 
 
 	[SerializeField]
-	bool m_generateFullTrack = false; // A bit of a hack flag to avoid pooling and building on the fly but will probably make the game run like ass
+	bool m_generateFullTrack = false; // Hack Flag DO NOT set in the editor, Always false it should be
+	[SerializeField]
+	int m_maxTracksToPreGen = 2;
 
 	bool m_levelStarted = false;
 
+	private float m_scoreIncrease = 0.1f;
+	private float m_scoreDecrease = 0.01f;
 	private float m_simpleScore = 0.0f;
+
+	[SerializeField]
+	private GameObject m_endHousePrefab;
+
+
 
 	// Quick hack to get a global score event that can be registerd to from anywhere
 	public static event System.Action<float> onScoreChanged;
@@ -60,19 +69,19 @@ public class LevelController : MonoBehaviour {
 		if (m_generateFullTrack == false)
 		{
 		// generate first 3 segments
-			for (m_nextSegmentIdx = 0; m_nextSegmentIdx < 3 ; ++m_nextSegmentIdx) {
+			for (int i = 0; i < m_maxTracksToPreGen ; ++i) {
 				if (m_nextSegmentIdx >= m_baseSegments.Length)
 				{
 					break;
 				}
-				ConstructTrackSegment(m_baseSegments[m_nextSegmentIdx]);
+				ConstructTrackSegment(m_baseSegments[i]);
 			}
 		}
 		else
 		{
 			Debug.Log("Constructing");
-			for (m_nextSegmentIdx = 0; m_nextSegmentIdx < m_baseSegments.Length; ++m_nextSegmentIdx) {
-				ConstructTrackSegment(m_baseSegments[m_nextSegmentIdx]);
+			for (int i = 0; i < m_baseSegments.Length; ++i) {
+				ConstructTrackSegment(m_baseSegments[i]);
 			}
 		}
 
@@ -106,6 +115,17 @@ public class LevelController : MonoBehaviour {
 		new_street_segment.transform.position = Vector3.forward * (float)segment_distance_offset * GameConstants.beatScale;
 
 		m_currentSegments.Add(segment);
+		// increment the next index
+		++m_nextSegmentIdx;
+
+		// if there's no more segmetns build the end house
+		if (m_nextSegmentIdx >= m_baseSegments.Length && m_endHousePrefab != null)
+		{
+			segment_distance_offset += segment.BeatObstacles.Length;
+			GameObject endHouse = Instantiate(m_endHousePrefab);
+			endHouse.transform.SetParent(m_movingRoot, false);
+			endHouse.transform.position = Vector3.forward * (float)segment_distance_offset * GameConstants.beatScale;
+		}
 	}
 
 	void FixedUpdate()
@@ -132,16 +152,15 @@ public class LevelController : MonoBehaviour {
 					{
 						// bit of a quick hack to try and tidy up
 						// destroys the generated decorations
-						Destroy(m_movingRoot.GetChild(2).gameObject, 0.5f);
+						Destroy(m_movingRoot.GetChild(2).gameObject, 0.2f);
 						// destroys the generated obstacles
-						Destroy(m_movingRoot.GetChild(1).gameObject, 0.5f);
+						Destroy(m_movingRoot.GetChild(1).gameObject, 0.2f);
 					}
 
 					// if we have another segment to create then lets do that
 					if (m_generateFullTrack == false && m_nextSegmentIdx < m_baseSegments.Length)
 					{
 						ConstructTrackSegment(m_baseSegments[m_nextSegmentIdx]);
-						++m_nextSegmentIdx;
 					}
 				}
 				else {
@@ -164,21 +183,21 @@ public class LevelController : MonoBehaviour {
 				&& Input.GetKeyDown(KeyCode.LeftArrow))
 				{
 					m_currentBeatSuccess = true;
-					m_simpleScore = Mathf.Clamp01(m_simpleScore + 0.05f);
+					m_simpleScore = Mathf.Clamp01(m_simpleScore + m_scoreIncrease);
 					onScoreChanged(m_simpleScore);
 				}
 				else if(current_obstacles[m_currentSegmentBeat] == RhythmSegment.ObstacleType.Right_Side
 					 && Input.GetKeyDown(KeyCode.RightArrow))
 				{
 					m_currentBeatSuccess = true;
-					m_simpleScore = Mathf.Clamp01(m_simpleScore + 0.1f);
+					m_simpleScore = Mathf.Clamp01(m_simpleScore + m_scoreIncrease);
 					onScoreChanged(m_simpleScore);
 				}
 				else if(current_obstacles[m_currentSegmentBeat] == RhythmSegment.ObstacleType.Both_Sides
 					 && Input.GetKeyDown(KeyCode.UpArrow))
 				{
 					m_currentBeatSuccess = true;
-					m_simpleScore = Mathf.Clamp01(m_simpleScore + 0.05f);
+					m_simpleScore = Mathf.Clamp01(m_simpleScore + m_scoreIncrease);
 					onScoreChanged(m_simpleScore);
 				}
 			}
@@ -216,7 +235,7 @@ public class LevelController : MonoBehaviour {
 		// if we failed to get a score then decrease our overall score
 		if (m_currentBeatSuccess == false)
 		{
-			m_simpleScore = Mathf.Clamp01(m_simpleScore - 0.01f);
+			m_simpleScore = Mathf.Clamp01(m_simpleScore - m_scoreDecrease);
 			onScoreChanged(m_simpleScore);
 		}
 		m_timeSinceLastBeat = 0;

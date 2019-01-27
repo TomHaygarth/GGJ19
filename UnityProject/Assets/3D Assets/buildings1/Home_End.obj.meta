@@ -11,7 +11,12 @@ ModelImporter:
     2300000: Home_End
     3300000: Home_End
     4300000: Home_End
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: palette
+    second: {fileID: 2100000, guid: 3418e804c649c4d1db0144aadfe54930, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

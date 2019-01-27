@@ -670,4 +670,7 @@ MonoBehaviour:
   m_levelLength: 60
   m_movingRoot: {fileID: 0}
   m_audioSourcesObject: {fileID: 1624353887173430}
-  m_generateFullTrack: 1
+  m_generateFullTrack: 0
+  m_maxTracksToPreGen: 2
+  m_endHousePrefab: {fileID: 1945405875250846, guid: 480b0b56811bc4970b04e1f33e4710ff,
+    type: 2}

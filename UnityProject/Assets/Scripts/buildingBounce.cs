@@ -7,7 +7,10 @@ public class buildingBounce : MonoBehaviour
     [SerializeField]
     Animator buildAnim;
     public void bounce() {
-        buildAnim.SetTrigger("bounce");
+        if (buildAnim != null)
+        {
+            buildAnim.SetTrigger("bounce");
+        }
     }
 
     // Should be in its own script/or rename this 1 but its 2:45am
