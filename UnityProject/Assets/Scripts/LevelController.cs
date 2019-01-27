@@ -51,7 +51,8 @@ public class LevelController : MonoBehaviour {
 	[SerializeField]
 	private GameObject m_endHousePrefab;
 
-
+	[SerializeField]
+	private GameCanvasController m_canvasController;
 
 	// Quick hack to get a global score event that can be registerd to from anywhere
 	public static event System.Action<float> onScoreChanged;
@@ -62,7 +63,7 @@ public class LevelController : MonoBehaviour {
 	}
 
 	// Use this for initialization
-	IEnumerator Start () {
+	void Start () {
 
 		m_audioSources = m_audioSourcesObject.GetComponents<AudioSource>();
 
@@ -84,9 +85,10 @@ public class LevelController : MonoBehaviour {
 				ConstructTrackSegment(m_baseSegments[i]);
 			}
 		}
+	}
 
-		yield return new WaitForSeconds(4.0f);
-
+	public void StartGame()
+	{
 		SetNextSegmentInfo();
 		m_levelStarted = true;
 	}
@@ -167,6 +169,7 @@ public class LevelController : MonoBehaviour {
 					// we'vre reached the end
 					Debug.Log("YAY :) You Win!!!!");
 					m_levelStarted = false;
+					m_canvasController.ShowGameEnd(m_simpleScore);
 				}
 			}
 		}
