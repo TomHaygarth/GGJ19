@@ -56,11 +56,17 @@ public class LevelController : MonoBehaviour {
 
 	// Quick hack to get a global score event that can be registerd to from anywhere
 	public static event System.Action<float> onScoreChanged;
-	void Awake()
+
+    // Building bouncer
+    public static event System.Action<float> onBeatChange;
+
+    void Awake()
 	{
 		// as it's static we should flush this each time we start. Again, HACKEY!
-		onScoreChanged = delegate {};
-	}
+		onScoreChanged = delegate { };
+
+        onBeatChange = delegate { };
+    }
 
 	// Use this for initialization
 	void Start () {
@@ -167,7 +173,7 @@ public class LevelController : MonoBehaviour {
 				}
 				else {
 					// we'vre reached the end
-					Debug.Log("YAY :) You Win!!!!");
+					//Debug.Log("YAY :) You Win!!!!");
 					m_levelStarted = false;
 					m_canvasController.ShowGameEnd(m_simpleScore);
 				}
